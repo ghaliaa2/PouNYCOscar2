@@ -8,8 +8,10 @@ import CustomButton from '../../components/CustomButton';
 import { Link, router } from 'expo-router';
 
 import { createUser } from '../../lib/appwrite';
+import { useGlobalContext } from '../../context/GlobalProvider';
 
 const SignUp = () => {
+  const { setUser, setIsLoggedIn } = useGlobalContext();
   const [form, setform] = useState({
     username: '',
     email: '',
